@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useState, useEffect } from 'react';
 import { fetchKahootScoresLastModified } from '@/lib/csv';
 import { formatLastModified } from '@/lib/blob';
+import { BEST_N_WEEKS } from '@/const';
 
 export default function About() {
   const [lastModified, setLastModified] = useState<string>('載入中...');
@@ -58,8 +59,8 @@ export default function About() {
                   </li>
                 </ol>
               </div>
-			  
-			  <div>
+
+              <div>
                 <h3 className="font-semibold mb-2">月排行計算（月冠軍）</h3>
                 <ol className="list-decimal list-inside space-y-2 text-sm">
                   <li>
@@ -81,9 +82,9 @@ export default function About() {
                 <h3 className="font-semibold mb-2">學期總分計算</h3>
                 <ol className="list-decimal list-inside space-y-2 text-sm">
                   <li>
-                    <strong>取最佳 10 週</strong>：從所有週次中選取最高的 10 週成績加總
+                    <strong>取最佳 {BEST_N_WEEKS} 週</strong>：從所有週次中選取最高的 {BEST_N_WEEKS} 週成績加總
                     <div className="ml-6 mt-1 text-muted-foreground">
-                      若週數不足 10 週，則加總所有現有週次
+                      若週數不足 {BEST_N_WEEKS} 週，則加總所有現有週次
                     </div>
                   </li>
                   <li>
@@ -98,7 +99,7 @@ export default function About() {
                 </ol>
               </div>
 
-              
+
             </CardContent>
           </Card>
 
@@ -161,7 +162,7 @@ export default function About() {
                 所有成績計算均在前端完成，確保資料處理的透明性與即時性。
               </p>
               <p className="text-muted-foreground">
-				系統開源於 <a href="https://github.com/Chihuah/kahoot-leaderboard" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">GitHub</a>，歡迎檢視原始碼。
+                系統開源於 <a href="https://github.com/Chihuah/kahoot-leaderboard" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">GitHub</a>，歡迎檢視原始碼。
               </p>
             </CardContent>
           </Card>

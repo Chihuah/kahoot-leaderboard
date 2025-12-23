@@ -31,7 +31,7 @@ export const MONTH_WEEKS = getMonthWeeks();
 /**
  * 學期總分：取最佳 N 週的設定
  */
-export const BEST_N_WEEKS = 10;
+export const BEST_N_WEEKS = 6;
 
 export const APP_TITLE = import.meta.env.VITE_APP_TITLE || "App";
 
